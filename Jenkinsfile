@@ -8,5 +8,11 @@ pipeline {
                 echo 'not using shell in the Jenkinsfile'
             }
         }
+
+         stage('test') {
+            steps {
+                echo "I am testing my code"
+            }
+        }
     }
 }
