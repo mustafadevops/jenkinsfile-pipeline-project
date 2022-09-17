@@ -1,25 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                sh 'mvn -f hello-app/pom.xml -B -DskipTests clean package'
-            }
-            post {
-                success {
-                    echo "Now Archiving the Artifacts....."
-                    archiveArtifacts artifacts: '**/*.jar'
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn -f hello-app/pom.xml test'
-            }
-            post {
-                always {
-                    junit 'hello-app/target/surefire-reports/*.xml'
-                }
+                echo 'Clarusway_Way to Reinvent Yourself'
+                sh 'echo Integrating Jenkins Pipeline with GitHub Webhook using Jenkinsfile'
             }
         }
     }
